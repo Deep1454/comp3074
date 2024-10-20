@@ -1,22 +1,134 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/lightblue"
+    android:padding="16dp"
     tools:context=".MainActivity">
 
-
-
-
-    <TextView
-        android:layout_width="wrap_content"
+    <!-- CardView for input fields -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardInput"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginBottom="16dp"
+        android:elevation="8dp"
+        android:padding="16dp"
+        android:radius="12dp"
+        android:backgroundTint="@color/white"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/cardResults"
+        app:layout_constraintVertical_bias="0.2">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- Input for number of hours worked -->
+            <EditText
+                android:id="@+id/editTextHoursWorked"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Number of Hours Worked"
+                android:inputType="numberDecimal"
+                android:padding="12dp"
+                android:backgroundTint="@color/blue"
+                android:textColor="@color/black"
+                 />
+
+            <!-- Input for hourly rate -->
+            <EditText
+                android:id="@+id/editTextHourlyRate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Hourly Rate"
+                android:inputType="numberDecimal"
+                android:padding="12dp"
+                android:layout_marginTop="12dp"
+                android:backgroundTint="@color/blue"
+                android:textColor="@color/black"
+               />
+
+            <!-- Button to calculate pay -->
+            <Button
+                android:id="@+id/buttonCalculate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Calculate"
+                android:textColor="@android:color/white"
+                android:backgroundTint="@color/blue"
+                android:layout_marginTop="20dp"
+                android:paddingVertical="12dp"/>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <!-- CardView for displaying results -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardResults"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:elevation="8dp"
+        android:padding="16dp"
+        android:radius="12dp"
+        android:backgroundTint="@color/white"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/cardInput"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintVertical_bias="0.0">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- Display for pay -->
+            <TextView
+                android:id="@+id/textViewPay"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Pay: "
+                android:textSize="18sp"
+                android:padding="10dp"
+                android:textColor="@color/blue" />
+
+            <!-- Display for overtime pay -->
+            <TextView
+                android:id="@+id/textViewOvertimePay"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Overtime Pay: "
+                android:textSize="18sp"
+                android:padding="10dp"
+                android:textColor="@color/blue" />
+
+            <!-- Display for total pay -->
+            <TextView
+                android:id="@+id/textViewTotalPay"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Total Pay: "
+                android:textSize="18sp"
+                android:padding="10dp"
+                android:textColor="@color/blue" />
+
+            <!-- Display for tax -->
+            <TextView
+                android:id="@+id/textViewTax"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Tax: "
+                android:textSize="18sp"
+                android:padding="10dp"
+                android:textColor="@color/blue" />
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
