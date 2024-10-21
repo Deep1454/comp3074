@@ -10,7 +10,6 @@
     android:padding="16dp"
     tools:context=".MainActivity">
 
-    <!-- CardView for input fields -->
     <androidx.cardview.widget.CardView
         android:id="@+id/cardInput"
         android:layout_width="0dp"
@@ -31,9 +30,9 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <!-- Input for number of hours worked -->
+
             <EditText
-                android:id="@+id/editTextHoursWorked"
+                android:id="@+id/HoursWorked"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Number of Hours Worked"
@@ -43,9 +42,8 @@
                 android:textColor="@color/black"
                  />
 
-            <!-- Input for hourly rate -->
             <EditText
-                android:id="@+id/editTextHourlyRate"
+                android:id="@+id/HourlyRate"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Hourly Rate"
@@ -56,9 +54,8 @@
                 android:textColor="@color/black"
                />
 
-            <!-- Button to calculate pay -->
             <Button
-                android:id="@+id/buttonCalculate"
+                android:id="@+id/Calculate"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Calculate"
@@ -69,7 +66,6 @@
         </LinearLayout>
     </androidx.cardview.widget.CardView>
 
-    <!-- CardView for displaying results -->
     <androidx.cardview.widget.CardView
         android:id="@+id/cardResults"
         android:layout_width="0dp"
@@ -89,9 +85,8 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <!-- Display for pay -->
             <TextView
-                android:id="@+id/textViewPay"
+                android:id="@+id/Pay"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Pay: "
@@ -99,9 +94,8 @@
                 android:padding="10dp"
                 android:textColor="@color/blue" />
 
-            <!-- Display for overtime pay -->
             <TextView
-                android:id="@+id/textViewOvertimePay"
+                android:id="@+id/OvertimePay"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Overtime Pay: "
@@ -109,9 +103,17 @@
                 android:padding="10dp"
                 android:textColor="@color/blue" />
 
-            <!-- Display for total pay -->
             <TextView
-                android:id="@+id/textViewTotalPay"
+                android:id="@+id/Tax"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Tax: "
+                android:textSize="18sp"
+                android:padding="10dp"
+                android:textColor="@color/blue" />
+
+            <TextView
+                android:id="@+id/TotalPay"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Total Pay: "
@@ -119,15 +121,7 @@
                 android:padding="10dp"
                 android:textColor="@color/blue" />
 
-            <!-- Display for tax -->
-            <TextView
-                android:id="@+id/textViewTax"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Tax: "
-                android:textSize="18sp"
-                android:padding="10dp"
-                android:textColor="@color/blue" />
+
         </LinearLayout>
     </androidx.cardview.widget.CardView>
 
